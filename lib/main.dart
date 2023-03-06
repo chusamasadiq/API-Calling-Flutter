@@ -19,8 +19,7 @@ class ComplexAPI extends StatefulWidget {
 
 class _ComplexAPIState extends State<ComplexAPI> {
   Future<List<Post>> getPosts() async {
-    final response =
-        await http.get(Uri.parse('https://jsonplaceholder.typicode.com/posts'));
+    final response = await http.get(Uri.parse('https://jsonplaceholder.typicode.com/posts'));
     if (response.statusCode == 200) {
       if (response.body.isNotEmpty) {
         List jsonResponse = jsonDecode(response.body);
@@ -32,7 +31,6 @@ class _ComplexAPIState extends State<ComplexAPI> {
         }
         return jsonResponse
         */
-
       } else {
         throw Exception('API has no data');
       }
@@ -64,7 +62,7 @@ class _ComplexAPIState extends State<ComplexAPI> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'UserID: ${posts[index].userId}',
+                            'UserID: ${posts[index].userID}',
                             style: const TextStyle(fontWeight: FontWeight.bold),
                           ),
                           const SizedBox(height: 10),
